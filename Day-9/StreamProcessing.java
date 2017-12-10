@@ -1,9 +1,13 @@
-import java.lang.*;
-import java.util.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Stack;
 
 public class StreamProcessing {
-    public static void main(String[] args){
-	Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws FileNotFoundException{
+	Scanner sc = new Scanner(new FileReader(".\\Day-9\\day9.in"));
 	Stack<Character> stack = new Stack<Character>();
 	String in = sc.nextLine();
 	List<Character> list = new ArrayList<Character>();
@@ -35,8 +39,8 @@ public class StreamProcessing {
 		stack.pop();
 	    }
 	}
-	System.out.println(sum);
-	System.out.println(garbage);
+	System.out.println("Summe: " + sum);
+	System.out.println("Garbage: " + garbage);
 	
 	sc.close();
     }

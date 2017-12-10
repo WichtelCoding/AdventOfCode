@@ -3,7 +3,6 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,7 +12,7 @@ public class CopyOfRecursiveCircus2 {
     static HashMap<String, List<String>> hmTree = new HashMap<String, List<String>>();
     
     public static void main(String[] args) throws FileNotFoundException {
-	Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(new FileReader(".\\Day-7\\day7.in"));
 	while (sc.hasNextLine()) {
 	    String[] row = sc.nextLine().split(" -> ");
 	    String name = row[0].substring(0, row[0].indexOf(" "));

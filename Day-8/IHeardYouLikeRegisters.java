@@ -1,12 +1,14 @@
-import java.util.*;
-import java.lang.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class IHeardYouLikeRegisters {
     
     static HashMap<String, Integer> reg = new HashMap<String, Integer>();
     
-    public static void main(String[] args){
-	Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws FileNotFoundException{
+	Scanner sc = new Scanner(new FileReader(".\\Day-8\\day8.in"));
 	int m = 0;
 	while(sc.hasNextLine()){
 	    String[] in = sc.nextLine().split(" ");
@@ -33,8 +35,8 @@ public class IHeardYouLikeRegisters {
 	for(String s : reg.keySet())
 	    if(reg.get(s) > max)
 		max = reg.get(s);
-	System.out.println(max);
-	System.out.println(m);
+	System.out.println("Max: " + max);
+	System.out.println("Lokal Groesster Wert: " + m);
 	sc.close();
     }
 

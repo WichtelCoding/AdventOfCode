@@ -30,6 +30,9 @@ public class CopyOfRecursiveCircus2 {
 	hmTree.values().forEach(roots::removeAll);
 	String root = roots.get(0);
 	weight(root);
+	for(String child: hmTree.get("idfyy"))
+	    System.out.println(child + sum(weight(child)));
+	System.out.println(hmName.get("aobgmc")-8);
 	sc.close();
     }
     
@@ -41,9 +44,13 @@ public class CopyOfRecursiveCircus2 {
 	for(int i = 1; i < ws.length; ++i){
 	    ws[i] = sum(weight(hmTree.get(root).get(i-1)));
 	}
-	for(int i = 1; i < ws.length; ++i){
-	    if(ws[i] != ws[1])
+	for(int i = 2; i < ws.length; ++i){
+	    if(ws[i] != ws[i-1]) {
 		System.out.println(root);
+		for(int j = 1; j < ws.length; ++j)
+		    System.out.print(" " + ws[j]);
+		System.out.println();
+	    }
 	}
 	return ws;
     }
